@@ -1,0 +1,143 @@
+body {
+    background-color: #f3f3f3;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+    padding: 10px;
+}
+
+#bg-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+    background-image: 
+        repeating-linear-gradient(45deg, rgba(0,0,0,0.01) 0, rgba(0,0,0,0.01) 1px, transparent 1px, transparent 2px),
+        repeating-linear-gradient(-45deg, rgba(0,0,0,0.01) 0, rgba(0,0,0,0.01) 1px, transparent 1px, transparent 2px);
+    background-size: 4px 4px;
+}
+
+.floating-dot {
+    position: absolute;
+    border-radius: 50%;
+    animation: drift 15s ease-in-out infinite;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.25);
+}
+
+@keyframes drift {
+    0% { transform: translateY(0) rotate(0deg); opacity: 0.7; }
+    50% { transform: translateY(-18px) rotate(180deg); opacity: 0.3; }
+    100% { transform: translateY(0) rotate(360deg); opacity: 0.7; }
+}
+
+.picker-container {
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    background: #ffffff;
+    position: relative;
+    z-index: 1;
+    width: 300px;
+    max-width: 90%;
+}
+
+h1 {
+    margin: 0 0 15px;
+    font-size: 1.5em;
+    color: #333;
+    font-family: 'Righteous', cursive;
+}
+
+.color-preview {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 20px;
+}
+
+.color-circle {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+}
+
+.color-circle:hover {
+    transform: scale(1.1);
+}
+
+.color-circle:active {
+    transform: scale(0.95);
+}
+
+#color-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    pointer-events: none;
+}
+
+.color-details p {
+    margin: 10px 0;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+}
+
+.copy-button {
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 0.9em;
+    padding: 5px 10px;
+    background: #e0e0e0;
+    border: 2px outset #ffffff;
+    border-radius: 3px;
+    color: #000;
+    transition: all 0.2s;
+    font-family: 'Tahoma', sans-serif;
+    width: 40px;
+    text-align: center;
+}
+
+.copy-button:active {
+    border: 2px inset #d0d0d0;
+}
+
+@media (max-width: 480px) {
+    .picker-container { padding: 20px; }
+    h1 { font-size: 1.3em; }
+    .color-preview { width: 80px; height: 80px; }
+    .color-details p { font-size: 16px; flex-direction: column; }
+    .copy-button { margin-left: 0; margin-top: 8px; width: 40px; padding: 4px 8px; }
+}
+
+@media (max-width: 768px) and (min-width: 481px) {
+    .picker-container { width: 90%; max-width: 280px; }
+    h1 { font-size: 1.4em; }
+    .color-preview { width: 90px; height: 90px; }
+}
+
+@media (min-width: 769px) {
+    .picker-container { width: 300px; }
+}

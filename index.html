@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colour Picker</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="bg-canvas"></div>
+
+    <div class="picker-container">
+        <h1>Colour Picker</h1>
+
+        <div class="color-preview">
+            <div class="color-circle" id="color-display"></div>
+            <input type="color" id="color-input" value="#ff0000">
+        </div>
+
+        <div class="color-details">
+            <p>HEX: <span id="hex-code">#ff0000</span> <span class="copy-button" data-copy="hex-code">Copy</span></p>
+            <p>RGB: <span id="rgb-code">rgb(255, 0, 0)</span> <span class="copy-button" data-copy="rgb-code">Copy</span></p>
+            <p>HSL: <span id="hsl-code">hsl(0, 100%, 50%)</span> <span class="copy-button" data-copy="hsl-code">Copy</span></p>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

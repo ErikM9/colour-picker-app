@@ -96,6 +96,17 @@ h1 {
     pointer-events: none;
 }
 
+@supports (-webkit-touch-callout: none) {
+    #color-input {
+        pointer-events: auto;
+        z-index: 3;
+    }
+
+    .color-circle {
+        pointer-events: none;
+    }
+}
+
 .color-details p {
     margin: 10px 0;
     font-size: 18px;

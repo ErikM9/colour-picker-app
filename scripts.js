@@ -5,16 +5,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const colorCircle = document.getElementById('color-display');
     const copyButtons = document.querySelectorAll('.copy-button');
 
+    const isIOS =
+        /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+        (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+
     colorPicker.addEventListener('input', refreshColorDisplay);
 
-    colorCircle.addEventListener('click', () => {
-        colorPicker.click();
-    });
+    if (!isIOS) {
+        colorCircle.addEventListener('click', () => {
+            colorPicker.click();
+        });
 
-    colorCircle.addEventListener('touchstart', (e) => {
-        e.preventDefault();
-        colorPicker.click();
-    }, { passive: false });
+        colorCircle.addEventListener('touchstart', () => {
+            colorPicker.click();
+        }, { passive: true });
+    }
 
     copyButtons.forEach(button => {
         button.addEventListener('click', () => {

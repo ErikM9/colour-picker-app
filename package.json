@@ -1,0 +1,20 @@
+{
+  "name": "colour-picker",
+  "version": "1.0.0",
+  "description": "A colour picker with HEX, RGB, and HSL conversion",
+  "type": "module",
+  "scripts": {
+    "serve": "npx http-server src -p 3000 -c-1",
+    "test": "jasmine --config=jasmine.json",
+    "test:e2e": "nightwatch --config nightwatch.conf.cjs",
+    "test:e2e:headed": "nightwatch --config nightwatch.conf.cjs --env headed",
+    "test:all": "npm test && npm run test:e2e"
+  },
+  "devDependencies": {
+    "jasmine": "^5.1.0",
+    "nightwatch": "^3.4.0",
+    "http-server": "^14.1.1",
+    "wait-on": "^7.2.0"
+  },
+  "keywords": ["colour", "color", "picker", "hex", "rgb", "hsl", "converter"]
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colour Picker</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="bg-canvas"></div>
+
+    <div class="picker-container">
+        <h1>Colour Picker</h1>
+
+        <div class="color-preview">
+            <div class="color-circle" id="color-display" role="button" aria-label="Open colour picker" tabindex="0"></div>
+            <label for="color-input" class="sr-only">Pick a colour</label>
+            <input type="color" id="color-input" value="#ff0000" aria-label="Colour picker">
+        </div>
+
+        <div class="color-details" aria-live="polite" aria-label="Colour values">
+            <p>HEX: <span id="hex-code">#ff0000</span> <span class="copy-button" data-copy="hex-code" role="button" tabindex="0" aria-label="Copy HEX value">Copy</span></p>
+            <p>RGB: <span id="rgb-code">rgb(255, 0, 0)</span> <span class="copy-button" data-copy="rgb-code" role="button" tabindex="0" aria-label="Copy RGB value">Copy</span></p>
+            <p>HSL: <span id="hsl-code">hsl(0, 100%, 50%)</span> <span class="copy-button" data-copy="hsl-code" role="button" tabindex="0" aria-label="Copy HSL value">Copy</span></p>
+        </div>
+    </div>
+
+    <script type="module" src="scripts.js"></script>
+</body>
+</html>
